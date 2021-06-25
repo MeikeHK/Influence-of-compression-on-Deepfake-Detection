@@ -17,6 +17,10 @@ MesoNet = Meso4().to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(MesoNet.parameters(), lr=0.00001, momentum=0.9)
 
+#Load the uploaded model, no optimizer settings and such are included.
+#checkpoint = torch.load('./MesoNet.pkl', map_location=torch.device('cpu'))
+#MesoNet.load_state_dict(checkpoint)
+
 #Load the previous model.
 checkpoint = torch.load('MesoNet/MesoNet_best.pkl')
 MesoNet.load_state_dict(checkpoint['model_state_dict'])
