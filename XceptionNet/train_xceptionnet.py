@@ -15,7 +15,11 @@ print(device)
 XceptionNet = Xception().to(device)
 
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(XceptionNet.parameters(), lr=0.000001, momentum=0.9)
+optimizer = optim.SGD(XceptionNet.parameters(), lr=0.0001, momentum=0.9)
+
+#Load model from git, note that no optimizer and such have been saved in this case
+#checkpoint = torch.load('./XceptionNet.pkl', map_location=torch.device('cpu'))
+#XceptionNet.load_state_dict(checkpoint)
 
 #Load saved (best) model to continue training
 checkpoint = torch.load('XceptionNet/XceptionNet_best.pkl')
