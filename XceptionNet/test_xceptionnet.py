@@ -28,8 +28,8 @@ with open (test_set + '/labels_shorter.json') as json_file_test:
 	#load the best model
 	XceptionNet = Xception().to(device)
 
-	checkpoint = torch.load('./XceptionNet/XceptionNet_best.pkl', map_location=torch.device('cpu'))
-	XceptionNet.load_state_dict(checkpoint['model_state_dict'])
+	checkpoint = torch.load('./XceptionNet/XceptionNet.pkl', map_location=torch.device('cpu'))
+	XceptionNet.load_state_dict(checkpoint)
 	XceptionNet.eval()
 
 	labels_test = json.load(json_file_test)
