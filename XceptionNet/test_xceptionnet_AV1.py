@@ -32,8 +32,8 @@ with open (test_set + '/labels.json') as json_file_test:
 	#op Lisa
 	#checkpoint = torch.load('MesoNet/MesoNet_best.pkl')
 	#op mijn PC
-	checkpoint = torch.load('./XceptionNet_best.pkl', map_location=torch.device('cpu'))
-	XceptionNet.load_state_dict(checkpoint['model_state_dict'])
+	checkpoint = torch.load('./XceptionNet.pkl', map_location=torch.device('cpu'))
+	XceptionNet.load_state_dict(checkpoint)
 	XceptionNet.eval()
 
 	#load the labels
