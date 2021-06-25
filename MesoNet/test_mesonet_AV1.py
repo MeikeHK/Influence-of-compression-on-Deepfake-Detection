@@ -25,8 +25,8 @@ with open (test_set + '/labels.json') as json_file_test:
 
 	#load the best model
 	MesoNet = Meso4()
-	checkpoint = torch.load('./MesoNet_best.pkl', map_location=torch.device('cpu'))
-	MesoNet.load_state_dict(checkpoint['model_state_dict'])
+	checkpoint = torch.load('./MesoNet.pkl', map_location=torch.device('cpu'))
+	MesoNet.load_state_dict(checkpoint)
 	MesoNet.eval()
 
 	#load the labels
